@@ -4,10 +4,10 @@
 
 A React media player component inspired by Windows 95's included Media Player application (one of the early versions of Windows Media Player).
 
-Under the hood we rely on two important libraries:
+Under the hood we rely on two React component libraries:
 
 - [Cassette](https://github.com/benwiley4000/cassette), which powers the media playback itself
-- [@arturbien](https://github.com/arturbien)'s [React95](https://github.com/arturbien/React95), React UI components built to resemble Windows 95
+- [@arturbien](https://github.com/arturbien)'s [React95](https://github.com/arturbien/React95), UI components built to resemble Windows 95
 
 ## install
 
