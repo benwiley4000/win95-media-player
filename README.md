@@ -39,6 +39,7 @@ The UI component used by `Win95MediaPlayer`. If you're building a more complex m
 | ---------------- | --------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `getDisplayText` | Function  | `track => track.artist + ' - ' + track.title` | Receives a [track](https://benwiley4000.github.io/cassette/styleguide/#track) object (or `undefined` if none is active) and returns a string of display text |
 | `showVideo`      | Boolean   | `false`                                       | A boolean which must be set `true` to display video                                                                                                          |
+| `fullscreenEnabled` |	Boolean	| `false`	| If set `true`, adds a maximize button to the title bar which will trigger fullscreen mode |
 
 ## special thanks
 
