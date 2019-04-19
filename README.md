@@ -1,8 +1,10 @@
 # win-95-media-player
 
-*This repo is a work in progress*
+*This repo is a work in progress (TODO: add gif here)*
 
 A React media player component inspired by Windows 95's included Media Player application (one of the early versions of Windows Media Player).
+
+Works on the web, in an Electron app, or anywhere ReactDOM will run!
 
 Under the hood we rely on two React component libraries:
 
@@ -14,6 +16,12 @@ Under the hood we rely on two React component libraries:
 ```console
 npm install win95-media-player
 ```
+
+*TODO: add script tag install*
+
+## quick start
+
+*TODO: add quick start code*
 
 ## api
 
@@ -31,3 +39,7 @@ The UI component used by `Win95MediaPlayer`. If you're building a more complex m
 | ---------------- | --------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `getDisplayText` | Function  | `track => track.artist + ' - ' + track.title` | Receives a [track](https://benwiley4000.github.io/cassette/styleguide/#track) object (or `undefined` if none is active) and returns a string of display text |
 | `showVideo`      | Boolean   | `false`                                       | A boolean which must be set `true` to display video                                                                                                          |
+
+## special thanks
+
+[@felixrieseberg](https://github.com/felixrieseberg)'s [windows95](https://github.com/felixrieseberg/windows95) app allowed me to actually play around with the Windows 95 Media Player so I could extract the concept for this project.
