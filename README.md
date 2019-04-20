@@ -2,7 +2,7 @@
 
 *This repo is a work in progress (TODO: add gif here)*
 
-A React media player component inspired by Windows 95's included Media Player application (one of the early versions of Windows Media Player).
+A React media player component inspired by the Media Player app that shipped with Windows 95 (one of the early versions of Windows Media Player).
 
 Works on the web, in an Electron app, or anywhere ReactDOM will run!
 
