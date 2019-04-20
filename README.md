@@ -43,4 +43,4 @@ The UI component used by `Win95MediaPlayer`. If you're building a more complex m
 
 ## special thanks
 
-[@felixrieseberg](https://github.com/felixrieseberg)'s [windows95](https://github.com/felixrieseberg/windows95) app allowed me to actually play around with the Windows 95 Media Player so I could extract the concept for this project.
+[@felixrieseberg](https://github.com/felixrieseberg)'s [windows95](https://github.com/felixrieseberg/windows95) app allowed me to actually play around with the *real* Windows 95 Media Player so I could extract the concept for this project.
