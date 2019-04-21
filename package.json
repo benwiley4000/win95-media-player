@@ -1,0 +1,74 @@
+{
+  "name": "win95-media-player",
+  "version": "0.1.0",
+  "description": "Back from 1995, and running on your website",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "mkdirp lib && babel src --out-dir lib",
+    "watch": "mkdirp lib && babel src --watch --out-dir lib",
+    "example:watch": "parcel example/src/index.html",
+    "example:build": "parcel build example/src/index.html --out-dir example/dist",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benwiley4000/win95-media-player.git"
+  },
+  "engines": {
+    "node": ">=6.0.0",
+    "npm": ">=5.0.0"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "windows95",
+    "media-player",
+    "audio",
+    "video",
+    "ui",
+    "media",
+    "player",
+    "html5",
+    "windows",
+    "component",
+    "components",
+    "reactjs"
+  ],
+  "author": {
+    "name": "Ben Wiley",
+    "email": "therealbenwiley@gmail.com",
+    "url": "https://benwiley.org"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benwiley4000/win95-media-player/issues"
+  },
+  "homepage": "https://github.com/benwiley4000/win95-media-player#readme",
+  "peerDependencies": {
+    "react": "^16.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "mkdirp": "^0.5.1",
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-static-files-copy": "^2.0.0"
+  },
+  "dependencies": {
+    "@cassette/components": "^2.0.0-beta.0",
+    "@cassette/core": "^2.0.0-beta.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react95": "^1.0.3",
+    "styled-components": "^4.1.3"
+  },
+  "staticFiles": {
+    "staticPath": "example/public",
+    "watcherGlob": "**"
+  }
+}

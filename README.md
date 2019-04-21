@@ -25,13 +25,13 @@ npm install win95-media-player
 
 ## api
 
-### Win95MediaPlayer
+### MediaPlayer
 
-A fully-functional media player component. Accepts all the props accepted by `Win95MediaPlayerUI` and Cassette's [`PlayerContextProvider`](https://benwiley4000.github.io/cassette/styleguide/#playercontextprovider)
+A fully-functional media player component. Accepts all the props accepted by `MediaPlayerUI` and Cassette's [`PlayerContextProvider`](https://benwiley4000.github.io/cassette/styleguide/#playercontextprovider)
 
-### Win95MediaPlayerUI
+### MediaPlayerUI
 
-The UI component used by `Win95MediaPlayer`. If you're building a more complex media player app with Cassette, you can render this directly inside of a React tree wrapped by a `PlayerContextProvider` to hook into the surrounding `playerContext`.
+The UI component used by `MediaPlayer`. If you're building a more complex media player app with Cassette, you can render this directly inside of a React tree wrapped by a `PlayerContextProvider` to hook into the surrounding `playerContext`.
 
 #### props
 
