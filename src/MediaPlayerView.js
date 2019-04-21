@@ -12,6 +12,7 @@ const {
   Cutout
 } = require('react95');
 const { ThemeProvider } = require('styled-components');
+const ResizeObserver = require('resize-observer-polyfill').default;
 
 const MediaBtn = require('./MediaBtn');
 const SeekButton = require('./SeekButton');
@@ -34,6 +35,30 @@ const windowContentStyle = {
 const Spacer = () => <div style={{ width: 8 }} />;
 
 class MediaPlayerView extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      width: Infinity
+    };
+    this.randomId = ('id' + Math.random()).replace(/\./g, '-');
+  }
+
+  componentDidMount() {
+    const elem = document.getElementById(this.randomId);
+    this.resizeObserver = new ResizeObserver((entries, observer) => {
+      for (const entry of entries) {
+        this.setState({
+          width: entry.contentRect.width
+        });
+      }
+    });
+    this.resizeObserver.observe(elem);
+  }
+
+  componentWillUnmount() {
+    this.resizeObserver.disconnect();
+  }
+
   render() {
     const {
       getDisplayText,
@@ -54,9 +79,14 @@ class MediaPlayerView extends React.PureComponent {
       onSeekPreview,
       onSeekComplete
     } = this.props;
+    const { width } = this.state;
     return (
       <ThemeProvider theme={themes.default}>
-        <Window style={{ ...style, fontSize: 13 }} className={className}>
+        <Window
+          id={this.randomId}
+          style={{ ...style, fontSize: 13 }}
+          className={className}
+        >
           <WindowHeader style={windowHeaderStyle}>
             <Toolbar style={headerToolbarStyle}>
               &nbsp;
@@ -95,26 +125,32 @@ class MediaPlayerView extends React.PureComponent {
               />
               <MediaBtn title="Stop" icon="stop" disabled />
               <MediaBtn title="Eject" icon="eject" disabled />
-              <Spacer />
-              <MediaBtn title="Previous" icon="backskip" onClick={onBackSkip} />
-              <SeekButton type="rewind" />
-              <SeekButton type="fastforward" />
-              <MediaBtn
-                title="Next"
-                icon="forwardskip"
-                onClick={onForwardSkip}
-              />
-              <Spacer />
-              <MediaBtn
-                title="Start Selection"
-                icon="selectionstart"
-                disabled
-              />
-              <MediaBtn
-                title="End Selection"
-                icon="selectionend"
-                disabled
-              />
+              {width >= 260 &&
+                <React.Fragment>
+                  <Spacer />
+                  <MediaBtn title="Previous" icon="backskip" onClick={onBackSkip} />
+                  <SeekButton type="rewind" />
+                  <SeekButton type="fastforward" />
+                  <MediaBtn
+                    title="Next"
+                    icon="forwardskip"
+                    onClick={onForwardSkip}
+                  />
+                </React.Fragment>}
+              {width >= 310 &&
+                <React.Fragment>
+                  <Spacer />
+                  <MediaBtn
+                    title="Start Selection"
+                    icon="selectionstart"
+                    disabled
+                  />
+                  <MediaBtn
+                    title="End Selection"
+                    icon="selectionend"
+                    disabled
+                  />
+                </React.Fragment>}
               <Spacer />
               <Cutout shadow={false} style={{ flexGrow: 1 }}>
                 <span style={{ marginLeft: 2 }}>
