@@ -29,10 +29,16 @@ const headerToolbarStyle = {
 };
 const windowContentStyle = {
   padding: 0,
-  marginRight: 2
+  marginRight: 2,
+  flexGrow: 1,
+  display: 'flex',
+  flexDirection: 'column'
 };
 
 const Spacer = () => <div style={{ width: 8 }} />;
+const TinySpacer = () => <div style={{ width: 2 }} />;
+
+const titleBarButtonStyle = { width: 'initial', height: 'initial' };
 
 class MediaPlayerView extends React.PureComponent {
   constructor(props) {
@@ -84,81 +90,127 @@ class MediaPlayerView extends React.PureComponent {
       <ThemeProvider theme={themes.default}>
         <Window
           id={this.randomId}
-          style={{ ...style, fontSize: 13 }}
+          style={{
+            fontSize: 13,
+            ...style,
+            ...(fullscreen
+              ? {
+                margin: 0,
+                width: '100%',
+                maxWidth: 'initial',
+                height: '100%'
+              }
+              : {})
+          }}
           className={className}
         >
-          <WindowHeader style={windowHeaderStyle}>
-            <Toolbar style={headerToolbarStyle}>
-              &nbsp;
-              <Icon name={showVideo ? 'video' : 'audio'} />
-              &nbsp;
-              <span>
-                {getDisplayText(playlist[activeTrackIndex])}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              height: fullscreen ? '100%' : undefined
+            }}
+          >
+            <WindowHeader style={windowHeaderStyle}>
+              <Toolbar style={headerToolbarStyle}>
                 &nbsp;
-                ({paused ? 'paused' : 'playing'})
-              </span>
-            </Toolbar>
-          </WindowHeader>
-          <Toolbar style={{ ...headerToolbarStyle, position: 'relative' }}>
-            {['File', 'Edit', 'Device', 'Scale', 'Help'].map(menuHeader =>
-              <Button
-                key={menuHeader}
-                style={{ fontSize: 13, height: '1.6em' }}
-                size="sm"
-                flat
-                disabled
-              >
-                <span style={{ textDecoration: 'underline' }}>
-                  {menuHeader[0]}
+                <Icon name={showVideo ? 'video' : 'audio'} />
+                &nbsp;
+                <span
+                  style={{
+                    flexGrow: 1,
+                    whiteSpace: 'nowrap',
+                    textOverflow: 'ellipsis',
+                    overflow: 'hidden'
+                  }}
+                >
+                  {getDisplayText(playlist[activeTrackIndex])}
+                  &nbsp;
+                  ({paused ? 'paused' : 'playing'})
                 </span>
-                {menuHeader.slice(1)}
-              </Button>
-            )}
-          </Toolbar>
-          <WindowContent style={windowContentStyle}>
-            {showVideo && <VideoDisplay />}
-            <Toolbar>
-              <MediaBtn
-                title={paused ? 'Play' : 'Pause'}
-                icon={paused ? 'play' : 'pause'}
-                onClick={onTogglePause}
-              />
-              <MediaBtn title="Stop" icon="stop" disabled />
-              <MediaBtn title="Eject" icon="eject" disabled />
-              {width >= 260 &&
-                <React.Fragment>
-                  <Spacer />
-                  <MediaBtn title="Previous" icon="backskip" onClick={onBackSkip} />
-                  <SeekButton type="rewind" />
-                  <SeekButton type="fastforward" />
-                  <MediaBtn
-                    title="Next"
-                    icon="forwardskip"
-                    onClick={onForwardSkip}
-                  />
-                </React.Fragment>}
-              {width >= 310 &&
-                <React.Fragment>
-                  <Spacer />
-                  <MediaBtn
-                    title="Start Selection"
-                    icon="selectionstart"
-                    disabled
-                  />
-                  <MediaBtn
-                    title="End Selection"
-                    icon="selectionend"
-                    disabled
-                  />
-                </React.Fragment>}
-              <Spacer />
-              <Cutout shadow={false} style={{ flexGrow: 1 }}>
-                <span style={{ marginLeft: 2 }}>
-                  {convertToTime(currentTime)}
-                </span>
-              </Cutout>
+                <MediaBtn
+                  title="Minimize"
+                  icon="minimize"
+                  style={titleBarButtonStyle}
+                  disabled
+                />
+                <MediaBtn
+                  title="Fullscreen"
+                  icon={fullscreen ? 'unmaximize' : 'maximize'}
+                  style={titleBarButtonStyle}
+                  onClick={fullscreen ? requestExitFullscreen : requestFullscreen}
+                  disabled={!fullscreenEnabled}
+                />
+                <TinySpacer />
+                <MediaBtn
+                  title="Close"
+                  icon="x"
+                  style={titleBarButtonStyle}
+                  disabled
+                />
+              </Toolbar>
+            </WindowHeader>
+            <Toolbar style={{ ...headerToolbarStyle, position: 'relative' }}>
+              {['File', 'Edit', 'Device', 'Scale', 'Help'].map(menuHeader =>
+                <Button
+                  key={menuHeader}
+                  style={{ fontSize: 13, height: '1.6em' }}
+                  size="sm"
+                  flat
+                  disabled
+                >
+                  <span style={{ textDecoration: 'underline' }}>
+                    {menuHeader[0]}
+                  </span>
+                  {menuHeader.slice(1)}
+                </Button>
+              )}
             </Toolbar>
-          </WindowContent>
+            <WindowContent style={windowContentStyle}>
+              {showVideo && <VideoDisplay style={{ flexGrow: 1 }} />}
+              <Toolbar>
+                <MediaBtn
+                  title={paused ? 'Play' : 'Pause'}
+                  icon={paused ? 'play' : 'pause'}
+                  onClick={onTogglePause}
+                />
+                <MediaBtn title="Stop" icon="stop" disabled />
+                <MediaBtn title="Eject" icon="eject" disabled />
+                {width >= 260 &&
+                  <React.Fragment>
+                    <Spacer />
+                    <MediaBtn title="Previous" icon="backskip" onClick={onBackSkip} />
+                    <SeekButton type="rewind" />
+                    <SeekButton type="fastforward" />
+                    <MediaBtn
+                      title="Next"
+                      icon="forwardskip"
+                      onClick={onForwardSkip}
+                    />
+                  </React.Fragment>}
+                {width >= 310 &&
+                  <React.Fragment>
+                    <Spacer />
+                    <MediaBtn
+                      title="Start Selection"
+                      icon="selectionstart"
+                      disabled
+                    />
+                    <MediaBtn
+                      title="End Selection"
+                      icon="selectionend"
+                      disabled
+                    />
+                  </React.Fragment>}
+                <Spacer />
+                <Cutout shadow={false} style={{ flexGrow: 1 }}>
+                  <span style={{ marginLeft: 2 }}>
+                    {convertToTime(currentTime)}
+                  </span>
+                </Cutout>
+              </Toolbar>
+            </WindowContent>
+          </div>
         </Window>
       </ThemeProvider>
     );

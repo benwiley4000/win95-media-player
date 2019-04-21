@@ -15,7 +15,11 @@ const imgs = {
   selectionend: require('./icons/selectionend.png'),
   selectionstart: require('./icons/selectionstart.png'),
   stop: require('./icons/stop.png'),
-  video: require('./icons/video.png')
+  video: require('./icons/video.png'),
+  maximize: require('./icons/maximize.png'),
+  minimize: require('./icons/minimize.png'),
+  unmaximize: require('./icons/unmaximize.png'),
+  x: require('./icons/x.png')
 };
 
 const Icon = React.memo(({ name, ...rest }) => {
