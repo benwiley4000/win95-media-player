@@ -28,7 +28,9 @@ class SeekButton extends React.PureComponent {
   constructor(props) {
     super(props);
     this.handleMouseDown = () => {
-      let t = now();
+      // set back by throttle to make sure
+      // we update immediately
+      let t = now() - throttleDuration;
       const nextFrame = () => {
         const _t = now();
         const dt = _t - t;
