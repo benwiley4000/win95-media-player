@@ -3,13 +3,20 @@ const { Button } = require('react95');
 
 const Icon = require('./Icon');
 
-const MediaBtn = React.memo(({ icon, title, ...rest }) => {
+const MediaBtn = React.memo(({ icon, title, disabled, ...rest }) => {
+  const label = title + (disabled ? ' (disabled)' : '');
   return (
-    <Button title={title} size="sm" square {...rest}>
+    <Button
+      disabled={disabled}
+      title={label}
+      size="sm"
+      square
+      {...rest}
+    >
       <Icon
         name={icon}
-        style={{ opacity: rest.disabled ? 0.3 : 1 }}
-        alt={title}
+        style={{ opacity: disabled ? 0.3 : 1 }}
+        alt={label}
       />
     </Button>
   );
