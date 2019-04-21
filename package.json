@@ -4,7 +4,7 @@
   "description": "Back from 1995, and running on your website",
   "main": "lib/index.js",
   "scripts": {
-    "build": "mkdirp lib && node encodeIcons.js && babel src --out-dir lib",
+    "build": "rimraf lib && mkdirp lib && node encodeIcons.js && babel src --out-dir lib",
     "watch": "mkdirp lib && node encodeIcons.js && babel src --watch --out-dir lib",
     "example:watch": "parcel example/src/index.html",
     "example:build": "parcel build example/src/index.html --out-dir example/dist",
@@ -58,7 +58,8 @@
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-static-files-copy": "^2.0.0",
     "react": "^16.3.0",
-    "react-dom": "^16.3.0"
+    "react-dom": "^16.3.0",
+    "rimraf": "^2.6.3"
   },
   "dependencies": {
     "@cassette/components": "^2.0.0-beta.0",
