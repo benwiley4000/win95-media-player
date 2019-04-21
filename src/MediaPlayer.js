@@ -10,6 +10,8 @@ class MediaPlayer extends React.Component {
       getDisplayText,
       showVideo,
       fullscreenEnabled,
+      className,
+      style,
       ...rest
     } = this.props;
     return (
@@ -18,6 +20,8 @@ class MediaPlayer extends React.Component {
           getDisplayText={getDisplayText}
           showVideo={showVideo}
           fullscreenEnabled={fullscreenEnabled}
+          className={className}
+          style={style}
         />
       </PlayerContextProvider>
     );

@@ -37,9 +37,11 @@ The UI component used by `MediaPlayer`. If you're building a more complex media 
 
 | Prop name        | Prop type | Default value                                 | Description                                                                                                                                                  |
 | ---------------- | --------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `getDisplayText` | Function  | `track => track.artist + ' - ' + track.title` | Receives a [track](https://benwiley4000.github.io/cassette/styleguide/#track) object (or `undefined` if none is active) and returns a string of display text |
+| `getDisplayText` | Function  | `track => track.title` | Receives a [track](https://benwiley4000.github.io/cassette/styleguide/#track) object (or `undefined` if none is active) and returns a string of display text |
 | `showVideo`      | Boolean   | `false`                                       | A boolean which must be set `true` to display video                                                                                                          |
 | `fullscreenEnabled` |	Boolean	| `false`	| If set `true`, adds a maximize button to the title bar which will trigger fullscreen mode |
+| `className` | String |  | An optional CSS class name to pass to the outer window div |
+| `style` | Object |  | An optional React style object to pass to the outer window div |
 
 ## special thanks
 

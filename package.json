@@ -4,8 +4,8 @@
   "description": "Back from 1995, and running on your website",
   "main": "lib/index.js",
   "scripts": {
-    "build": "mkdirp lib && babel src --out-dir lib",
-    "watch": "mkdirp lib && babel src --watch --out-dir lib",
+    "build": "mkdirp lib && node encodeIcons.js && babel src --out-dir lib",
+    "watch": "mkdirp lib && node encodeIcons.js && babel src --watch --out-dir lib",
     "example:watch": "parcel example/src/index.html",
     "example:build": "parcel build example/src/index.html --out-dir example/dist",
     "prepare": "npm run build",
@@ -51,24 +51,20 @@
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
+    "base64-img": "^1.0.4",
     "mkdirp": "^0.5.1",
     "parcel-bundler": "^1.12.3",
-    "parcel-plugin-static-files-copy": "^2.0.0"
+    "parcel-plugin-static-files-copy": "^2.0.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
   },
   "dependencies": {
     "@cassette/components": "^2.0.0-beta.0",
     "@cassette/core": "^2.0.0-beta.0",
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "react95": "^1.0.3",
     "styled-components": "^4.1.3"
-  },
-  "staticFiles": {
-    "staticPath": "example/public",
-    "watcherGlob": "**"
   }
 }
