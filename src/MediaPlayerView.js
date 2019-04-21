@@ -36,7 +36,7 @@ const windowContentStyle = {
 };
 
 const Spacer = () => <div style={{ width: 8 }} />;
-const TinySpacer = () => <div style={{ width: 2 }} />;
+const TinySpacer = () => <div style={{ width: 3 }} />;
 
 const titleBarButtonStyle = { width: 'initial', height: 'initial' };
 
@@ -113,9 +113,9 @@ class MediaPlayerView extends React.PureComponent {
           >
             <WindowHeader style={windowHeaderStyle}>
               <Toolbar style={headerToolbarStyle}>
-                &nbsp;
+                <TinySpacer />
                 <Icon name={showVideo ? 'video' : 'audio'} />
-                &nbsp;
+                <TinySpacer />
                 <span
                   style={{
                     flexGrow: 1,
@@ -148,6 +148,7 @@ class MediaPlayerView extends React.PureComponent {
                   style={titleBarButtonStyle}
                   disabled
                 />
+                <TinySpacer />
               </Toolbar>
             </WindowHeader>
             <Toolbar style={{ ...headerToolbarStyle, position: 'relative' }}>
