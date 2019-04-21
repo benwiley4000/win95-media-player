@@ -13,6 +13,7 @@ export default [
       }
     ],
     title: 'Microsoft Windows 95 Video Guide',
+    duration: '56:30',
     meta: {
       archiveDotOrgUrl:
         'https://archive.org/details/Microsoft_Windows_95_Video_Guide_1995_Uncut_VHS_x264_Aw.mkv',
@@ -32,6 +33,7 @@ export default [
       }
     ],
     title: 'Computer Chronicles - Windows 95',
+    duration: '27:02',
     meta: {
       archiveDotOrgUrl: 'https://archive.org/details/CC1301_windows_95',
       year: 1995
@@ -51,7 +53,7 @@ export default [
       }
     ],
     title: 'Windows 95 - A First Look',
-    artist: 'United States Department of the Interior',
+    duration: '25:25',
     meta: {
       archiveDotOrgUrl: 'https://archive.org/details/Windows95AFirstLookDiamondEntertainmentCorporation1995',
       year: 1995
