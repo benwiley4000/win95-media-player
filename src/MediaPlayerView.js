@@ -9,14 +9,18 @@ const {
   WindowContent,
   Toolbar,
   Button,
-  Cutout
+  Cutout,
+  Divider
 } = require('react95');
 const { ThemeProvider } = require('styled-components');
 const ResizeObserver = require('resize-observer-polyfill').default;
 
+const ProgressControl = require('./ProgressControl');
 const MediaBtn = require('./MediaBtn');
 const SeekButton = require('./SeekButton');
 const Icon = require('./Icon');
+const SimpleDivider = require('./SimpleDivider');
+const VerticalDivider = require('./VerticalDivider');
 const convertToTime = require('./convertToTime');
 
 const windowHeaderStyle = {
@@ -169,6 +173,9 @@ class MediaPlayerView extends React.PureComponent {
             </Toolbar>
             <WindowContent style={windowContentStyle}>
               {showVideo && <VideoDisplay style={{ flexGrow: 1 }} />}
+              <SimpleDivider />
+              <ProgressControl />
+              <Divider />
               <Toolbar>
                 <MediaBtn
                   title={paused ? 'Play' : 'Pause'}
@@ -203,6 +210,8 @@ class MediaPlayerView extends React.PureComponent {
                       disabled
                     />
                   </React.Fragment>}
+                <Spacer />
+                <VerticalDivider />
                 <Spacer />
                 <Cutout shadow={false} style={{ flexGrow: 1 }}>
                   <span style={{ marginLeft: 2 }}>
