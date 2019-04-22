@@ -19,7 +19,7 @@ npm install win95-media-player
 
 ## quick start
 
-The first thing you need is a working React application. If you don't, you can try [create-react-app](https://github.com/facebook/create-react-app) to skip all the annoying parts of setting one up.
+The first thing you need is a working React application. If you don't have one, you can try [create-react-app](https://github.com/facebook/create-react-app) to skip all the annoying parts of setting one up.
 
 After that, adding Win95 Media Player to your app is simple!
 
