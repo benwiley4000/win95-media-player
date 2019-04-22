@@ -1,4 +1,4 @@
-# win-95-media-player
+# Win95 Media Player
 
 *This repo is a work in progress (TODO: add gif here)*
 
@@ -17,12 +17,41 @@ Under the hood we rely on two React component libraries:
 npm install win95-media-player
 ```
 
-*TODO: add script tag install*
-
 ## quick start
 
-*TODO: add quick start code*
+The first thing you need is a working React application. If you don't, you can try [create-react-app](https://github.com/facebook/create-react-app) to skip all the annoying parts of setting one up.
 
+After that, adding Win95 Media Player to your app is simple!
+
+Assuming you have this div somewhere in your html...
+
+```html
+<div id="app"></div>
+```
+
+Just run this JavaScript:
+
+```jsx
+// JavaScript
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import { MediaPlayer } from 'win95-media-player';
+
+const playlist = [
+  {
+    url: 'https://archive.org/download/CC1301_windows_95/CC1301_windows_95_512kb.mp4',
+    title: 'Computer Chronicles - Windows 95'
+  }
+];
+
+ReactDOM.render(
+  <MediaPlayer playlist={playlist} showVideo fullscreenEnabled />,
+  document.getElementById('app')
+);
+```
+
+And you should have a working MediaPlayer on your page! It should look something [like this](https://benwiley4000.github.io/win95-media-player/quickstart.html).
 ## api
 
 ### MediaPlayer
