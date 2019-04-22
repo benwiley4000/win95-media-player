@@ -8,6 +8,7 @@
     "watch": "mkdirp lib && node encodeIcons.js && babel src --watch --out-dir lib",
     "example:watch": "parcel example/src/index.html",
     "example:build": "parcel build example/src/index.html --out-dir example/dist && parcel build example/quickstart/quickstart.html --out-dir example/dist",
+    "deploy": "npm run build && npm run example:build && gh-pages -d example/dist",
     "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -54,6 +55,7 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "base64-img": "^1.0.4",
+    "gh-pages": "^2.0.1",
     "mkdirp": "^0.5.1",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-static-files-copy": "^2.0.0",
