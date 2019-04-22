@@ -7,7 +7,7 @@
     "build": "rimraf lib && mkdirp lib && node encodeIcons.js && babel src --out-dir lib",
     "watch": "mkdirp lib && node encodeIcons.js && babel src --watch --out-dir lib",
     "example:watch": "parcel example/src/index.html",
-    "example:build": "parcel build example/src/index.html --out-dir example/dist",
+    "example:build": "parcel build example/src/index.html --out-dir example/dist && parcel build example/quickstart/quickstart.html --out-dir example/dist",
     "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
