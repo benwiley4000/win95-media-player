@@ -64,10 +64,10 @@
     "rimraf": "^2.6.3"
   },
   "dependencies": {
-    "@cassette/components": "^2.0.0-beta.0",
-    "@cassette/core": "^2.0.0-beta.0",
+    "@cassette/components": "^2.0.0-beta.1",
+    "@cassette/core": "^2.0.0-beta.1",
     "prop-types": "^15.7.2",
-    "react95": "^1.0.3",
+    "react95": "1.0.3",
     "resize-observer-polyfill": "^1.5.1",
     "styled-components": "^4.1.3"
   },
