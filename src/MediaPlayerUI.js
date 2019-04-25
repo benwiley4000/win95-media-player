@@ -7,12 +7,12 @@ const MediaPlayerView = require('./components/MediaPlayerView');
 class MediaPlayerUI extends React.PureComponent {
   render() {
     const {
-       getDisplayText,
-       showVideo,
-       fullscreenEnabled,
-       className,
-       style
-     } = this.props;
+      getDisplayText,
+      showVideo,
+      fullscreenEnabled,
+      className,
+      style
+    } = this.props;
     return (
       <FullscreenContextProvider fullscreenEnabled={fullscreenEnabled}>
         <MediaPlayerView

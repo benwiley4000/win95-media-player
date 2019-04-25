@@ -86,7 +86,7 @@ class ProgressRuler extends React.PureComponent {
           key={`${time}-${index}`}
           style={{
             position: 'absolute',
-            left: time * widthOverTime,
+            left: time * widthOverTime
           }}
         >
           {tickMark}

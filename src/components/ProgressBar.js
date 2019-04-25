@@ -68,7 +68,7 @@ class ProgressBar extends React.PureComponent {
   }
 
   componentDidMount() {
-    this.resizeObserver = new ResizeObserver((entries, observer) => {
+    this.resizeObserver = new ResizeObserver(entries => {
       this.setState({
         progressWidth: entries[0].contentRect.width - progressMargin * 2
       });
@@ -81,12 +81,8 @@ class ProgressBar extends React.PureComponent {
   }
 
   render() {
-    const { progressWidth } = this.state;
     return (
-      <div
-        ref={elem => this.progressBox = elem}
-        style={{ flexGrow: 1 }}
-      >
+      <div ref={elem => (this.progressBox = elem)} style={{ flexGrow: 1 }}>
         <MediaProgressBar
           handle={handle}
           progressDirection="right"

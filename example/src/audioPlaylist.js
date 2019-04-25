@@ -5,18 +5,18 @@ export default [
     duration: '0:06'
   },
   {
-    url: require('./media/Bach\'s Brandenburg Concerto No. 3.mp3'),
-    title: 'Bach\'s Brandenburg Concerto No. 3',
+    url: require("./media/Bach's Brandenburg Concerto No. 3.mp3"),
+    title: "Bach's Brandenburg Concerto No. 3",
     duration: '6:10'
   },
   {
-    url: require('./media/Beethoven\'s 5th Symphony.mp3'),
-    title: 'Beethoven\'s 5th Symphony',
+    url: require("./media/Beethoven's 5th Symphony.mp3"),
+    title: "Beethoven's 5th Symphony",
     duration: '6:22'
   },
   {
-    url: require('./media/Beethoven\'s Fur Elise.mp3'),
-    title: 'Beethoven\'s Fur Elise',
+    url: require("./media/Beethoven's Fur Elise.mp3"),
+    title: "Beethoven's Fur Elise",
     duration: '2:36'
   },
   {
@@ -25,8 +25,8 @@ export default [
     duration: '1:51'
   },
   {
-    url: require('./media/Debussy\'s Claire de Lune.mp3'),
-    title: 'Debussy\'s Claire de Lune',
+    url: require("./media/Debussy's Claire de Lune.mp3"),
+    title: "Debussy's Claire de Lune",
     duration: '3:54'
   },
   {
@@ -35,8 +35,8 @@ export default [
     duration: '2:47'
   },
   {
-    url: require('./media/Mozart\'s Symphony No. 40.mp3'),
-    title: 'Mozart\'s Symphony No. 40',
+    url: require("./media/Mozart's Symphony No. 40.mp3"),
+    title: "Mozart's Symphony No. 40",
     duration: '1:11'
   }
 ];

@@ -1,5 +1,4 @@
 const React = require('react');
-const PropTypes = require('prop-types');
 const { PlayerContextProvider } = require('@cassette/core');
 
 const MediaPlayerUI = require('./MediaPlayerUI');
@@ -27,5 +26,15 @@ class MediaPlayer extends React.Component {
     );
   }
 }
+
+MediaPlayer.propTypes = {
+  ...MediaPlayerUI.propTypes,
+  ...PlayerContextProvider.propTypes
+};
+
+MediaPlayer.defaultProps = {
+  ...MediaPlayerUI.defaultProps,
+  ...PlayerContextProvider.defaultProps
+};
 
 module.exports = MediaPlayer;

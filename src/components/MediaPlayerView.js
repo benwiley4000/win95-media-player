@@ -73,7 +73,7 @@ class MediaPlayerView extends React.PureComponent {
 
   componentDidMount() {
     const elem = document.getElementById(this.randomId);
-    this.resizeObserver = new ResizeObserver((entries, observer) => {
+    this.resizeObserver = new ResizeObserver(entries => {
       for (const entry of entries) {
         this.setState({
           width: entry.contentRect.width
@@ -103,7 +103,7 @@ class MediaPlayerView extends React.PureComponent {
       currentTime,
       onTogglePause,
       onBackSkip,
-      onForwardSkip,
+      onForwardSkip
     } = this.props;
     const { width } = this.state;
     return (
@@ -115,11 +115,11 @@ class MediaPlayerView extends React.PureComponent {
             ...style,
             ...(fullscreen
               ? {
-                margin: 0,
-                width: '100%',
-                maxWidth: 'initial',
-                height: '100%'
-              }
+                  margin: 0,
+                  width: '100%',
+                  maxWidth: 'initial',
+                  height: '100%'
+                }
               : {})
           }}
           className={className}
@@ -145,8 +145,7 @@ class MediaPlayerView extends React.PureComponent {
                   }}
                 >
                   {getDisplayText(playlist[activeTrackIndex])}
-                  &nbsp;
-                  ({paused ? 'paused' : 'playing'})
+                  &nbsp; ({paused ? 'paused' : 'playing'})
                 </span>
                 <MediaBtn
                   title="Minimize"
@@ -158,7 +157,9 @@ class MediaPlayerView extends React.PureComponent {
                   title="Fullscreen"
                   icon={fullscreen ? 'unmaximize' : 'maximize'}
                   style={titleBarButtonStyle}
-                  onClick={fullscreen ? requestExitFullscreen : requestFullscreen}
+                  onClick={
+                    fullscreen ? requestExitFullscreen : requestFullscreen
+                  }
                   disabled={!fullscreenEnabled}
                 />
                 <TinySpacer />
@@ -172,7 +173,7 @@ class MediaPlayerView extends React.PureComponent {
               </Toolbar>
             </WindowHeader>
             <Toolbar style={{ ...headerToolbarStyle, position: 'relative' }}>
-              {['File', 'Edit', 'Device', 'Scale', 'Help'].map(menuHeader =>
+              {['File', 'Edit', 'Device', 'Scale', 'Help'].map(menuHeader => (
                 <Button
                   key={menuHeader}
                   style={{ fontSize: 13, height: '1.6em' }}
@@ -185,7 +186,7 @@ class MediaPlayerView extends React.PureComponent {
                   </span>
                   {menuHeader.slice(1)}
                 </Button>
-              )}
+              ))}
             </Toolbar>
             <WindowContent style={windowContentStyle}>
               {showVideo && <VideoDisplay style={{ flexGrow: 1 }} />}
@@ -216,10 +217,14 @@ class MediaPlayerView extends React.PureComponent {
                 />
                 <MediaBtn title="Stop" icon="stop" disabled />
                 <MediaBtn title="Eject" icon="eject" disabled />
-                {width >= 260 &&
+                {width >= 260 && (
                   <React.Fragment>
                     <Spacer />
-                    <MediaBtn title="Previous" icon="backskip" onClick={onBackSkip} />
+                    <MediaBtn
+                      title="Previous"
+                      icon="backskip"
+                      onClick={onBackSkip}
+                    />
                     <SeekButton type="rewind" />
                     <SeekButton type="fastforward" />
                     <MediaBtn
@@ -227,8 +232,9 @@ class MediaPlayerView extends React.PureComponent {
                       icon="forwardskip"
                       onClick={onForwardSkip}
                     />
-                  </React.Fragment>}
-                {width >= 310 &&
+                  </React.Fragment>
+                )}
+                {width >= 310 && (
                   <React.Fragment>
                     <Spacer />
                     <MediaBtn
@@ -241,7 +247,8 @@ class MediaPlayerView extends React.PureComponent {
                       icon="selectionend"
                       disabled
                     />
-                  </React.Fragment>}
+                  </React.Fragment>
+                )}
                 <Spacer />
                 <VerticalDivider />
                 <Spacer />
@@ -278,19 +285,16 @@ MediaPlayerView.propTypes = {
   onForwardSkip: PropTypes.func.isRequired
 };
 
-module.exports = playerContextFilter(
-  MediaPlayerView,
-  [
-    'fullscreen',
-    'requestFullscreen',
-    'requestExitFullscreen',
-    'playlist',
-    'activeTrackIndex',
-    'paused',
-    'currentTime',
-    'onSeekComplete',
-    'onTogglePause',
-    'onBackSkip',
-    'onForwardSkip'
-  ]
-);
+module.exports = playerContextFilter(MediaPlayerView, [
+  'fullscreen',
+  'requestFullscreen',
+  'requestExitFullscreen',
+  'playlist',
+  'activeTrackIndex',
+  'paused',
+  'currentTime',
+  'onSeekComplete',
+  'onTogglePause',
+  'onBackSkip',
+  'onForwardSkip'
+]);

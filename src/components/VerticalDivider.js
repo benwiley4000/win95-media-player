@@ -1,5 +1,4 @@
 const React = require('react');
-const propTypes = require('prop-types');
 const { themes } = require('react95');
 
 const style = {
