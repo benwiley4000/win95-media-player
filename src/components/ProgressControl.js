@@ -20,6 +20,7 @@ const progressContainerStyle = {
   borderLeftColor: themes.default.borderDark,
   borderBottomColor: themes.default.borderLightest,
   borderRightColor: themes.default.borderLightest,
+  boxSizing: 'border-box'
 };
 
 const handle = (
@@ -34,7 +35,8 @@ const handle = (
         borderTopColor: themes.default.borderLightest,
         borderLeftColor: themes.default.borderLightest,
         borderRightColor: themes.default.borderDark,
-        borderBottomWidth: 0
+        borderBottomWidth: 0,
+        boxSizing: 'border-box'
       }}
     />
     <div
@@ -51,7 +53,8 @@ const handle = (
         transform: 'rotate(-45deg) translateX(-50%)',
         position: 'relative',
         left: 5,
-        top: -6
+        top: -6,
+        boxSizing: 'border-box'
       }}
     />
   </div>
@@ -114,9 +117,9 @@ function findIdealInterval(progressWidth, trackDuration) {
 }
 
 function getTicks(progressWidth, trackDuration) {
-  const ticks = [];
+  const ticks = [{ time: 0, label: true }];
   const interval = findIdealInterval(progressWidth, trackDuration);
-  for (let time = 0; time < trackDuration; time += interval) {
+  for (let time = interval; time < trackDuration; time += interval) {
     ticks.push({ time, label: true });
   }
   const last = ticks[ticks.length - 1];
