@@ -21,7 +21,7 @@ const SeekButton = require('./SeekButton');
 const Icon = require('./Icon');
 const SimpleDivider = require('./SimpleDivider');
 const VerticalDivider = require('./VerticalDivider');
-const convertToTime = require('./convertToTime');
+const convertToTime = require('../utils/convertToTime');
 
 const windowHeaderStyle = {
   padding: 0,

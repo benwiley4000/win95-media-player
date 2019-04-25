@@ -2,7 +2,7 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const { FullscreenContextProvider } = require('@cassette/core');
 
-const MediaPlayerView = require('./MediaPlayerView');
+const MediaPlayerView = require('./components/MediaPlayerView');
 
 class MediaPlayerUI extends React.PureComponent {
   render() {
