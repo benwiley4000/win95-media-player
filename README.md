@@ -1,6 +1,6 @@
 # Win95 Media Player
 
-*This repo is a work in progress (TODO: add gif here)*
+![](example/public/banner.png)
 
 A React media player component inspired by the Media Player app that shipped with Windows 95 (one of the early versions of Windows Media Player).
 
@@ -23,9 +23,15 @@ The first thing you need is a working React application. If you don't have one, 
 
 After that, adding Win95 Media Player to your app is simple!
 
-Assuming you have this div somewhere in your html...
+Assuming you have this in your html...
 
 ```html
+<style>
+  .player {
+    /* width can be anything, this is just a suggestion */
+    width: 350px;
+  }
+</style>
 <div id="app"></div>
 ```
 
@@ -46,12 +52,18 @@ const playlist = [
 ];
 
 ReactDOM.render(
-  <MediaPlayer playlist={playlist} showVideo fullscreenEnabled />,
+  <MediaPlayer
+    className="player"
+    playlist={playlist}
+    showVideo
+    fullscreenEnabled
+  />,
   document.getElementById('app')
 );
 ```
 
 And you should have a working MediaPlayer on your page! It should look something [like this](https://benwiley4000.github.io/win95-media-player/quickstart.html).
+
 ## api
 
 ### MediaPlayer
