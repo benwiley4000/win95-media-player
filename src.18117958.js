@@ -58,41 +58,41 @@ var e=require("process");Object.defineProperty(exports,"__esModule",{value:!0}),
 },{"react":"ccIB","styled-components":"43MO"}],"oOir":[function(require,module,exports) {
 module.exports=require("./prod");
 },{"./prod":"QEkx"}],"rvuq":[function(require,module,exports) {
-module.exports="/audio.959c1b9b.png";
+module.exports="/win95-media-player/audio.959c1b9b.png";
 },{}],"zK1Z":[function(require,module,exports) {
-module.exports="/backscroll.9e5ce8ca.png";
+module.exports="/win95-media-player/backscroll.9e5ce8ca.png";
 },{}],"jgXh":[function(require,module,exports) {
-module.exports="/backseek.eb3e3f75.png";
+module.exports="/win95-media-player/backseek.eb3e3f75.png";
 },{}],"5GGw":[function(require,module,exports) {
-module.exports="/backskip.ad30b85e.png";
+module.exports="/win95-media-player/backskip.ad30b85e.png";
 },{}],"lvtf":[function(require,module,exports) {
-module.exports="/eject.78b2530a.png";
+module.exports="/win95-media-player/eject.78b2530a.png";
 },{}],"GFMQ":[function(require,module,exports) {
-module.exports="/forwardscroll.289070ec.png";
+module.exports="/win95-media-player/forwardscroll.289070ec.png";
 },{}],"unNj":[function(require,module,exports) {
-module.exports="/forwardseek.c48b6968.png";
+module.exports="/win95-media-player/forwardseek.c48b6968.png";
 },{}],"HPwx":[function(require,module,exports) {
-module.exports="/forwardskip.ba1c2d0c.png";
+module.exports="/win95-media-player/forwardskip.ba1c2d0c.png";
 },{}],"nMuM":[function(require,module,exports) {
-module.exports="/pause.9d841318.png";
+module.exports="/win95-media-player/pause.9d841318.png";
 },{}],"DYNh":[function(require,module,exports) {
-module.exports="/play.2991cb39.png";
+module.exports="/win95-media-player/play.2991cb39.png";
 },{}],"DGE6":[function(require,module,exports) {
-module.exports="/selectionend.cf14a652.png";
+module.exports="/win95-media-player/selectionend.cf14a652.png";
 },{}],"rqav":[function(require,module,exports) {
-module.exports="/selectionstart.e5ba1d52.png";
+module.exports="/win95-media-player/selectionstart.e5ba1d52.png";
 },{}],"OCz/":[function(require,module,exports) {
-module.exports="/stop.5cc2271e.png";
+module.exports="/win95-media-player/stop.5cc2271e.png";
 },{}],"sbIu":[function(require,module,exports) {
-module.exports="/video.580baf2e.png";
+module.exports="/win95-media-player/video.580baf2e.png";
 },{}],"K4nd":[function(require,module,exports) {
-module.exports="/maximize.0a3844da.png";
+module.exports="/win95-media-player/maximize.0a3844da.png";
 },{}],"vpVq":[function(require,module,exports) {
-module.exports="/minimize.6dcb503d.png";
+module.exports="/win95-media-player/minimize.6dcb503d.png";
 },{}],"MH8k":[function(require,module,exports) {
-module.exports="/unmaximize.73ded2ff.png";
+module.exports="/win95-media-player/unmaximize.73ded2ff.png";
 },{}],"mOhs":[function(require,module,exports) {
-module.exports="/x.53821575.png";
+module.exports="/win95-media-player/x.53821575.png";
 },{}],"iC8N":[function(require,module,exports) {
 function e(){return(e=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var i=arguments[r];for(var n in i)Object.prototype.hasOwnProperty.call(i,n)&&(e[n]=i[n])}return e}).apply(this,arguments)}function r(e,r){if(null==e)return{};var n,o,s=i(e,r);if(Object.getOwnPropertySymbols){var c=Object.getOwnPropertySymbols(e);for(o=0;o<c.length;o++)n=c[o],r.indexOf(n)>=0||Object.prototype.propertyIsEnumerable.call(e,n)&&(s[n]=e[n])}return s}function i(e,r){if(null==e)return{};var i,n,o={},s=Object.keys(e);for(n=0;n<s.length;n++)i=s[n],r.indexOf(i)>=0||(o[i]=e[i]);return o}var n=require("react"),o=require("prop-types"),s={audio:require("../icons/audio.png"),backscroll:require("../icons/backscroll.png"),backseek:require("../icons/backseek.png"),backskip:require("../icons/backskip.png"),eject:require("../icons/eject.png"),forwardscroll:require("../icons/forwardscroll.png"),forwardseek:require("../icons/forwardseek.png"),forwardskip:require("../icons/forwardskip.png"),pause:require("../icons/pause.png"),play:require("../icons/play.png"),selectionend:require("../icons/selectionend.png"),selectionstart:require("../icons/selectionstart.png"),stop:require("../icons/stop.png"),video:require("../icons/video.png"),maximize:require("../icons/maximize.png"),minimize:require("../icons/minimize.png"),unmaximize:require("../icons/unmaximize.png"),x:require("../icons/x.png")},c=n.memo(function(i){var o=i.name,c=r(i,["name"]);return n.createElement("img",e({},c,{src:s[o]}))});c.propTypes={name:o.string.isRequired},module.exports=c;
 },{"react":"ccIB","prop-types":"3/B0","../icons/audio.png":"rvuq","../icons/backscroll.png":"zK1Z","../icons/backseek.png":"jgXh","../icons/backskip.png":"5GGw","../icons/eject.png":"lvtf","../icons/forwardscroll.png":"GFMQ","../icons/forwardseek.png":"unNj","../icons/forwardskip.png":"HPwx","../icons/pause.png":"nMuM","../icons/play.png":"DYNh","../icons/selectionend.png":"DGE6","../icons/selectionstart.png":"rqav","../icons/stop.png":"OCz/","../icons/video.png":"sbIu","../icons/maximize.png":"K4nd","../icons/minimize.png":"vpVq","../icons/unmaximize.png":"MH8k","../icons/x.png":"mOhs"}],"5Lwx":[function(require,module,exports) {
@@ -118,24 +118,24 @@ var e=require("./MediaPlayer"),r=require("./MediaPlayerUI");module.exports={Medi
 },{"./MediaPlayer":"pUcy","./MediaPlayerUI":"ML84"}],"q6IN":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var o=[{sources:[{src:"https://archive.org/download/Microsoft_Windows_95_Video_Guide_1995_Uncut_VHS_x264_Aw.mkv/Microsoft_Windows_95_Video_Guide_1995_Uncut_VHS_x264_Aw.ogv",type:"video/ogg"},{src:"https://archive.org/download/Microsoft_Windows_95_Video_Guide_1995_Uncut_VHS_x264_Aw.mkv/Microsoft_Windows_95_Video_Guide_1995_Uncut_VHS_x264_Aw.mp4",type:"video/mp4"}],title:"Microsoft Windows 95 Video Guide",artwork:[{src:"https://m.media-amazon.com/images/M/MV5BNDhlMjFjMDktOGQ2Ny00ZTQzLTkwZDUtNDhiNDVkMWVmODliXkEyXkFqcGdeQXVyMTgyMzEyNDY@._V1_.jpg"}],duration:"56:30",meta:{archiveDotOrgUrl:"https://archive.org/details/Microsoft_Windows_95_Video_Guide_1995_Uncut_VHS_x264_Aw.mkv",year:1995}},{sources:[{src:"https://archive.org/download/CC1301_windows_95/CC1301_windows_95.ogv",type:"video/ogg"},{src:"https://archive.org/download/CC1301_windows_95/CC1301_windows_95_512kb.mp4",type:"video/mp4"}],title:"Computer Chronicles - Windows 95",duration:"27:02",meta:{archiveDotOrgUrl:"https://archive.org/details/CC1301_windows_95",year:1995}},{sources:[{src:"https://archive.org/download/Windows95AFirstLookDiamondEntertainmentCorporation1995/Windows%2095%20-%20A%20First%20Look%20%28Diamond%20Entertainment%20Corporation%29%281995%29.ogv",type:"video/ogg"},{src:"https://archive.org/download/Windows95AFirstLookDiamondEntertainmentCorporation1995/Windows%2095%20-%20A%20First%20Look%20%28Diamond%20Entertainment%20Corporation%29%281995%29.mp4",type:"video/mp4"}],title:"Windows 95 - A First Look",duration:"25:25",meta:{archiveDotOrgUrl:"https://archive.org/details/Windows95AFirstLookDiamondEntertainmentCorporation1995",year:1995}}];exports.default=o;
 },{}],"ZA66":[function(require,module,exports) {
-module.exports="/The Microsoft Sound.44af96f9.mp3";
+module.exports="/win95-media-player/The Microsoft Sound.44af96f9.mp3";
 },{}],"waal":[function(require,module,exports) {
-module.exports="/Bach's Brandenburg Concerto No. 3.19b0aa52.mp3";
+module.exports="/win95-media-player/Bach's Brandenburg Concerto No. 3.19b0aa52.mp3";
 },{}],"r5Um":[function(require,module,exports) {
-module.exports="/Beethoven's 5th Symphony.274ba96b.mp3";
+module.exports="/win95-media-player/Beethoven's 5th Symphony.274ba96b.mp3";
 },{}],"xbaT":[function(require,module,exports) {
-module.exports="/Beethoven's Fur Elise.e6a49154.mp3";
+module.exports="/win95-media-player/Beethoven's Fur Elise.e6a49154.mp3";
 },{}],"9zVv":[function(require,module,exports) {
-module.exports="/Dance of the Sugar-Plum Fairy.e6517949.mp3";
+module.exports="/win95-media-player/Dance of the Sugar-Plum Fairy.e6517949.mp3";
 },{}],"Bzzw":[function(require,module,exports) {
-module.exports="/Debussy's Claire de Lune.17909b16.mp3";
+module.exports="/win95-media-player/Debussy's Claire de Lune.17909b16.mp3";
 },{}],"kWY+":[function(require,module,exports) {
-module.exports="/In the Hall of the Mountain King.814d7a3a.mp3";
+module.exports="/win95-media-player/In the Hall of the Mountain King.814d7a3a.mp3";
 },{}],"w7gT":[function(require,module,exports) {
-module.exports="/Mozart's Symphony No. 40.d3f24261.mp3";
+module.exports="/win95-media-player/Mozart's Symphony No. 40.d3f24261.mp3";
 },{}],"CWkD":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=[{url:require("./media/The Microsoft Sound.mp3"),title:"The Microsoft Sound",duration:"0:06"},{url:require("./media/Bach's Brandenburg Concerto No. 3.mp3"),title:"Bach's Brandenburg Concerto No. 3",duration:"6:10"},{url:require("./media/Beethoven's 5th Symphony.mp3"),title:"Beethoven's 5th Symphony",duration:"6:22"},{url:require("./media/Beethoven's Fur Elise.mp3"),title:"Beethoven's Fur Elise",duration:"2:36"},{url:require("./media/Dance of the Sugar-Plum Fairy.mp3"),title:"Dance of the Sugar-Plum Fairy",duration:"1:51"},{url:require("./media/Debussy's Claire de Lune.mp3"),title:"Debussy's Claire de Lune",duration:"3:54"},{url:require("./media/In the Hall of the Mountain King.mp3"),title:"In the Hall of the Mountain King",duration:"2:47"},{url:require("./media/Mozart's Symphony No. 40.mp3"),title:"Mozart's Symphony No. 40",duration:"1:11"}];exports.default=e;
 },{"./media/The Microsoft Sound.mp3":"ZA66","./media/Bach's Brandenburg Concerto No. 3.mp3":"waal","./media/Beethoven's 5th Symphony.mp3":"r5Um","./media/Beethoven's Fur Elise.mp3":"xbaT","./media/Dance of the Sugar-Plum Fairy.mp3":"9zVv","./media/Debussy's Claire de Lune.mp3":"Bzzw","./media/In the Hall of the Mountain King.mp3":"kWY+","./media/Mozart's Symphony No. 40.mp3":"w7gT"}],"Focm":[function(require,module,exports) {
 "use strict";var e=o(require("react")),t=o(require("react-dom")),a=require("@cassette/core"),l=require("../../src"),n=o(require("./videoPlaylist")),r=o(require("./audioPlaylist"));function o(e){return e&&e.__esModule?e:{default:e}}function s(e){var t=localStorage.getItem(e);return t&&(t=JSON.parse(t)),t}var u=s("video-state-snapshot"),d=s("audio-state-snapshot");function i(e,t){localStorage.setItem(t,JSON.stringify(e))}function c(e){i(e,"video-state-snapshot")}function p(e){i(e,"audio-state-snapshot")}t.default.render(e.default.createElement(a.PlayerContextGroup,null,e.default.createElement("div",{className:"players-container"},e.default.createElement(l.MediaPlayer,{playlist:n.default,showVideo:!0,fullscreenEnabled:!0,initialStateSnapshot:u,onStateSnapshot:c,className:"player"}),e.default.createElement(l.MediaPlayer,{playlist:r.default,initialStateSnapshot:d,onStateSnapshot:p,className:"player"}))),document.getElementById("app"));var m=document.getElementById("example-code").textContent;t.default.render(e.default.createElement("pre",null,e.default.createElement("code",null,m)),document.getElementById("example-code-display"));
 },{"react":"ccIB","react-dom":"x9tB","@cassette/core":"dHqf","../../src":"uOLC","./videoPlaylist":"q6IN","./audioPlaylist":"CWkD"}]},{},["Focm"], null)
-//# sourceMappingURL=/src.18117958.js.map
+//# sourceMappingURL=/win95-media-player/src.18117958.js.map

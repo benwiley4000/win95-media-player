@@ -118,4 +118,4 @@ var e=require("./MediaPlayer"),r=require("./MediaPlayerUI");module.exports={Medi
 },{"./MediaPlayer":"EgIX","./MediaPlayerUI":"E9MM"}],"VcAz":[function(require,module,exports) {
 "use strict";var e=a(require("react")),r=a(require("react-dom")),t=require("../..");function a(e){return e&&e.__esModule?e:{default:e}}var l=[{url:"https://archive.org/download/CC1301_windows_95/CC1301_windows_95_512kb.mp4",title:"Computer Chronicles - Windows 95"}];r.default.render(e.default.createElement(t.MediaPlayer,{className:"player",playlist:l,showVideo:!0,fullscreenEnabled:!0}),document.getElementById("app"));
 },{"react":"ccIB","react-dom":"x9tB","../..":"JQm+"}]},{},["VcAz"], null)
-//# sourceMappingURL=/quickstart.f8bd9937.js.map
+//# sourceMappingURL=/win95-media-player/quickstart.f8bd9937.js.map
