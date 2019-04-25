@@ -33,65 +33,69 @@ const intervalsInSeconds = [
 
 const tickMark = <div style={{ height: 10, overflow: 'hidden' }}>|</div>;
 
-const ProgressRuler = React.memo(({ progressWidth, duration }) => {
-  // save the width-over-time ratio (we'll need it for math)
-  const widthOverTime = progressWidth / duration;
+class ProgressRuler extends React.PureComponent {
+  render() {
+    const { progressWidth, duration } = this.props;
 
-  // compute the minimum suitable time interval for ruler tick
-  // marks so labels won't overlap with each other
-  let interval;
-  {
-    let i = 0;
-    do {
-      interval = intervalsInSeconds[i++];
-    } while (
-      i < intervalsInSeconds.length &&
-      interval * widthOverTime < minWidthForTickInterval
-    );
-  }
+    // save the width-over-time ratio (we'll need it for math)
+    const widthOverTime = progressWidth / duration;
 
-  // compute a list of times at which we'll render tick marks,
-  // and determine if the label for each should be visible
-  // (normally we will show all labels but the second-to-last)
-  const ticks = [{ time: 0, showLabel: true }];
-  {
-    for (let time = interval; time < duration; time += interval) {
-      ticks.push({ time, showLabel: true });
+    // compute the minimum suitable time interval for ruler tick
+    // marks so labels won't overlap with each other
+    let interval;
+    {
+      let i = 0;
+      do {
+        interval = intervalsInSeconds[i++];
+      } while (
+        i < intervalsInSeconds.length &&
+        interval * widthOverTime < minWidthForTickInterval
+      );
     }
-    const last = ticks[ticks.length - 1];
-    if (last.time < duration) {
-      if (last.time > 0) {
-        last.showLabel = false;
+
+    // compute a list of times at which we'll render tick marks,
+    // and determine if the label for each should be visible
+    // (normally we will show all labels but the second-to-last)
+    const ticks = [{ time: 0, showLabel: true }];
+    {
+      for (let time = interval; time < duration; time += interval) {
+        ticks.push({ time, showLabel: true });
       }
-      ticks.push({ time: duration, showLabel: true });
+      const last = ticks[ticks.length - 1];
+      if (last.time < duration) {
+        if (last.time > 0) {
+          last.showLabel = false;
+        }
+        ticks.push({ time: duration, showLabel: true });
+      }
     }
+
+    return ticks.map(({ time, showLabel }, index) => {
+      // we want to render 3 digits regardless of the size of the number,
+      // so smaller numbers will have more decimal places. if the number
+      // is over 1000 then we'll have to use 4 digits or more. because
+      // we are rendering second counts, this is actually going to be
+      // common for longer clips (something that wasn't even a thought
+      // when Windows 95 was developed, most likely).
+      const label = showLabel
+        ? time.toFixed(Math.max(0, 3 - Math.floor(time).toString().length))
+        : '';
+
+      return (
+        <div
+          key={`${time}-${index}`}
+          style={{
+            position: 'absolute',
+            left: time * widthOverTime,
+          }}
+        >
+          {tickMark}
+          <div style={{ position: 'relative', left: -2 }}>{label}</div>
+        </div>
+      );
+    });
   }
-
-  return ticks.map(({ time, showLabel }, index) => {
-    // we want to render 3 digits regardless of the size of the number,
-    // so smaller numbers will have more decimal places. if the number
-    // is over 1000 then we'll have to use 4 digits or more. because
-    // we are rendering second counts, this is actually going to be
-    // common for longer clips (something that wasn't even a thought
-    // when Windows 95 was developed, most likely).
-    const label = showLabel
-      ? time.toFixed(Math.max(0, 3 - Math.floor(time).toString().length))
-      : '';
-
-    return (
-      <div
-        key={`${time}-${index}`}
-        style={{
-          position: 'absolute',
-          left: time * widthOverTime,
-        }}
-      >
-        {tickMark}
-        <div style={{ position: 'relative', left: -2 }}>{label}</div>
-      </div>
-    );
-  });
-});
+}
 
 ProgressRuler.propTypes = {
   duration: PropTypes.number.isRequired,

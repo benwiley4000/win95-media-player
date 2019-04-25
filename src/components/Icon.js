@@ -22,9 +22,12 @@ const imgs = {
   x: require('../icons/x.png')
 };
 
-const Icon = React.memo(({ name, ...rest }) => {
-  return <img {...rest} src={imgs[name]} />;
-});
+class Icon extends React.PureComponent {
+  render() {
+    const { name, ...rest } = this.props;
+    return <img {...rest} src={imgs[name]} />;
+  }
+}
 
 Icon.propTypes = {
   name: PropTypes.string.isRequired
