@@ -15,7 +15,7 @@ const {
 const { ThemeProvider } = require('styled-components');
 const ResizeObserver = require('resize-observer-polyfill').default;
 
-const ProgressControl = require('./ProgressControl');
+const ProgressBar = require('./ProgressBar');
 const MediaBtn = require('./MediaBtn');
 const SeekButton = require('./SeekButton');
 const Icon = require('./Icon');
@@ -38,6 +38,18 @@ const windowContentStyle = {
   display: 'flex',
   flexDirection: 'column'
 };
+const scrollButtonContainerStyle = {
+  marginTop: 10,
+  marginRight: '1.3rem',
+  marginLeft: '0.3rem',
+  display: 'flex'
+};
+const scrollButtonStyle = {
+  width: 11,
+  height: 13
+};
+
+const scrollInterval = 1 / 30;
 
 const Spacer = () => <div style={{ width: 8 }} />;
 const TinySpacer = () => <div style={{ width: 3 }} />;
@@ -51,6 +63,12 @@ class MediaPlayerView extends React.PureComponent {
       width: Infinity
     };
     this.randomId = ('id' + Math.random()).replace(/\./g, '-');
+    this.handleScrollForward = () => {
+      this.props.onSeekComplete(this.props.currentTime + scrollInterval);
+    };
+    this.handleScrollBackward = () => {
+      this.props.onSeekComplete(this.props.currentTime - scrollInterval);
+    };
   }
 
   componentDidMount() {
@@ -86,8 +104,6 @@ class MediaPlayerView extends React.PureComponent {
       onTogglePause,
       onBackSkip,
       onForwardSkip,
-      onSeekPreview,
-      onSeekComplete
     } = this.props;
     const { width } = this.state;
     return (
@@ -174,7 +190,23 @@ class MediaPlayerView extends React.PureComponent {
             <WindowContent style={windowContentStyle}>
               {showVideo && <VideoDisplay style={{ flexGrow: 1 }} />}
               <SimpleDivider />
-              <ProgressControl />
+              <div style={{ display: 'flex' }}>
+                <ProgressBar />
+                <div style={scrollButtonContainerStyle}>
+                  <MediaBtn
+                    title="Scroll Backward"
+                    icon="backscroll"
+                    style={scrollButtonStyle}
+                    onClick={this.handleScrollBackward}
+                  />
+                  <MediaBtn
+                    title="Scroll Forward"
+                    icon="forwardscroll"
+                    style={scrollButtonStyle}
+                    onClick={this.handleScrollForward}
+                  />
+                </div>
+              </div>
               <Divider />
               <Toolbar>
                 <MediaBtn
@@ -239,6 +271,8 @@ MediaPlayerView.propTypes = {
   playlist: PropTypes.arrayOf(PlayerPropTypes.track.isRequired).isRequired,
   activeTrackIndex: PropTypes.number.isRequired,
   paused: PropTypes.bool.isRequired,
+  currentTime: PropTypes.number.isRequired,
+  onSeekComplete: PropTypes.func.isRequired,
   onTogglePause: PropTypes.func.isRequired,
   onBackSkip: PropTypes.func.isRequired,
   onForwardSkip: PropTypes.func.isRequired
@@ -254,7 +288,6 @@ module.exports = playerContextFilter(
     'activeTrackIndex',
     'paused',
     'currentTime',
-    'onSeekPreview',
     'onSeekComplete',
     'onTogglePause',
     'onBackSkip',

@@ -4,8 +4,6 @@ const { playerContextFilter } = require('@cassette/core');
 const { themes } = require('react95');
 const ResizeObserver = require('resize-observer-polyfill').default;
 
-import MediaBtn from './MediaBtn';
-
 const progressMargin = 10;
 
 // based on Cutout styles from react95
@@ -59,20 +57,6 @@ const handle = (
     />
   </div>
 );
-
-const scrollButtonContainerStyle = {
-  marginTop: 10,
-  marginRight: '1.3rem',
-  marginLeft: '0.3rem',
-  display: 'flex'
-};
-
-const scrollButtonStyle = {
-  width: 11,
-  height: 13
-};
-
-const scrollInterval = 1 / 30;
 
 // the minimum horizontal pixel space needed to print a time label
 const minWidthForTickInterval = 30;
@@ -142,12 +126,6 @@ class ProgressControl extends React.PureComponent {
         { time: props.duration, label: true }
       ]
     };
-    this.handleScrollForward = () => {
-      this.props.onSeekComplete(this.props.currentTime + scrollInterval);
-    };
-    this.handleScrollBackward = () => {
-      this.props.onSeekComplete(this.props.currentTime - scrollInterval);
-    };
   }
 
   componentDidMount() {
@@ -181,63 +159,44 @@ class ProgressControl extends React.PureComponent {
     const { ticks, progressWidth } = this.state;
     const ratio = progressWidth / duration;
     return (
-      <div style={{ display: 'flex' }}>
+      <div
+        ref={elem => this.progressBox = elem}
+        style={{ flexGrow: 1 }}
+      >
+        <MediaProgressBar
+          handle={handle}
+          progressDirection="right"
+          style={progressContainerStyle}
+        />
         <div
-          ref={elem => this.progressBox = elem}
-          style={{ flexGrow: 1 }}
+          style={{
+            position: 'relative',
+            height: 30,
+            marginLeft: progressMargin,
+            marginRight: progressMargin
+          }}
         >
-          <MediaProgressBar
-            handle={handle}
-            progressDirection="right"
-            style={progressContainerStyle}
-          />
-          <div
-            style={{
-              position: 'relative',
-              height: 30,
-              marginLeft: progressMargin,
-              marginRight: progressMargin
-            }}
-          >
-            {ticks.map(({ time, label }, index) => {
-              return (
-                <div
-                  key={time + '-' + index}
-                  style={{
-                    position: 'absolute',
-                    left: time * ratio,
-                  }}
-                >
-                  <div style={{ height: 10, overflow: 'hidden' }}>|</div>
-                  <div style={{ position: 'relative', left: -2 }}>
-                    {label &&
-                      time.toFixed(Math.max(0, 3 - Math.floor(time).toString().length))}
-                  </div>
+          {ticks.map(({ time, label }, index) => {
+            return (
+              <div
+                key={time + '-' + index}
+                style={{
+                  position: 'absolute',
+                  left: time * ratio,
+                }}
+              >
+                <div style={{ height: 10, overflow: 'hidden' }}>|</div>
+                <div style={{ position: 'relative', left: -2 }}>
+                  {label &&
+                    time.toFixed(Math.max(0, 3 - Math.floor(time).toString().length))}
                 </div>
-              );
-            })}
-          </div>
-        </div>
-        <div style={scrollButtonContainerStyle}>
-          <MediaBtn
-            title="Scroll Backward"
-            icon="backscroll"
-            style={scrollButtonStyle}
-            onClick={this.handleScrollBackward}
-          />
-          <MediaBtn
-            title="Scroll Forward"
-            icon="forwardscroll"
-            style={scrollButtonStyle}
-            onClick={this.handleScrollForward}
-          />
+              </div>
+            );
+          })}
         </div>
       </div>
     );
   }
 }
 
-module.exports = playerContextFilter(
-  ProgressControl,
-  ['currentTime', 'duration', 'onSeekComplete']
-);
+module.exports = playerContextFilter(ProgressControl, ['duration']);
