@@ -8,7 +8,8 @@
     "watch": "mkdirp lib && node encodeIcons.js && babel src --watch --out-dir lib",
     "example:watch": "parcel example/src/index.html",
     "example:build": "parcel build example/src/index.html --out-dir example/dist && parcel build example/quickstart/quickstart.html --out-dir example/dist",
-    "deploy": "npm run build && npm run example:build && gh-pages -d example/dist",
+    "example:build:deploy": "parcel build example/src/index.html --out-dir example/dist --public-url /win95-media-player/ && parcel build example/quickstart/quickstart.html --out-dir example/dist --public-url /win95-media-player/",
+    "deploy": "npm run build && npm run example:build:deploy && gh-pages -d example/dist",
     "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
