@@ -13,6 +13,11 @@ const playlist = [
 ];
 
 ReactDOM.render(
-  <MediaPlayer playlist={playlist} showVideo fullscreenEnabled />,
+  <MediaPlayer
+    className="player"
+    playlist={playlist}
+    showVideo
+    fullscreenEnabled
+  />,
   document.getElementById('app')
 );

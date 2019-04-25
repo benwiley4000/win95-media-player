@@ -117,6 +117,11 @@
       <div id="example-code-display"></div>
       <script id="example-code" type="text/jsx-example">
         <!-- HTML -->
+        <style>
+          .player {
+            width: 350px;
+          }
+        </style>
         <div id="app"></div>
 
 
@@ -134,7 +139,12 @@
         ];
 
         ReactDOM.render(
-          <MediaPlayer playlist={playlist} showVideo fullscreenEnabled />,
+          <MediaPlayer
+            className="player"
+            playlist={playlist}
+            showVideo
+            fullscreenEnabled
+          />,
           document.getElementById('app')
         );
       </script>
