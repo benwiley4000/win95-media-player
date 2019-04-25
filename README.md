@@ -1,10 +1,12 @@
 # Win95 Media Player
 
-![](example/public/banner.png)
+<img src="example/public/banner.png">
 
 A React media player component inspired by the Media Player app that shipped with Windows 95 (one of the early versions of Windows Media Player).
 
 Works on the web, in an Electron app, or anywhere ReactDOM will run!
+
+<img src="example/public/fullscreen.png">
 
 Under the hood we rely on two React component libraries:
 
