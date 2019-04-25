@@ -14,9 +14,10 @@ const titles = {
   rewind: 'Rewind'
 };
 
-const now = typeof performance !== 'undefined'
-  ? performance.now.bind(performance)
-  : Date.now.bind(Date);
+const now =
+  typeof performance !== 'undefined'
+    ? performance.now.bind(performance)
+    : Date.now.bind(Date);
 
 // 6x speed
 const rate = (1 / 1000) * 6;
@@ -36,12 +37,10 @@ class SeekButton extends React.PureComponent {
         const dt = _t - t;
         if (dt >= throttleDuration) {
           t = _t;
-          this.props.onSeekComplete(
-            this.props.currentTime + rate * dt
-          );
+          this.props.onSeekComplete(this.props.currentTime + rate * dt);
         }
         this.frame = requestAnimationFrame(nextFrame);
-      }
+      };
       this.frame = requestAnimationFrame(nextFrame);
     };
     this.handleMouseUp = () => {
@@ -73,7 +72,7 @@ SeekButton.propTypes = {
   type: PropTypes.oneOf(['fastforward', 'rewind']).isRequired
 };
 
-module.exports = playerContextFilter(
-  SeekButton,
-  ['currentTime', 'onSeekComplete']
-);
+module.exports = playerContextFilter(SeekButton, [
+  'currentTime',
+  'onSeekComplete'
+]);

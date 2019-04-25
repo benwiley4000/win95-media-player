@@ -7,7 +7,8 @@ import { MediaPlayer } from '../..';
 
 const playlist = [
   {
-    url: 'https://archive.org/download/CC1301_windows_95/CC1301_windows_95_512kb.mp4',
+    url:
+      'https://archive.org/download/CC1301_windows_95/CC1301_windows_95_512kb.mp4',
     title: 'Computer Chronicles - Windows 95'
   }
 ];

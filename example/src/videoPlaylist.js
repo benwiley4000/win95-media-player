@@ -13,7 +13,12 @@ export default [
       }
     ],
     title: 'Microsoft Windows 95 Video Guide',
-    artwork: [{ src: 'https://m.media-amazon.com/images/M/MV5BNDhlMjFjMDktOGQ2Ny00ZTQzLTkwZDUtNDhiNDVkMWVmODliXkEyXkFqcGdeQXVyMTgyMzEyNDY@._V1_.jpg' }],
+    artwork: [
+      {
+        src:
+          'https://m.media-amazon.com/images/M/MV5BNDhlMjFjMDktOGQ2Ny00ZTQzLTkwZDUtNDhiNDVkMWVmODliXkEyXkFqcGdeQXVyMTgyMzEyNDY@._V1_.jpg'
+      }
+    ],
     duration: '56:30',
     meta: {
       archiveDotOrgUrl:
@@ -24,7 +29,8 @@ export default [
   {
     sources: [
       {
-        src: 'https://archive.org/download/CC1301_windows_95/CC1301_windows_95.ogv',
+        src:
+          'https://archive.org/download/CC1301_windows_95/CC1301_windows_95.ogv',
         type: 'video/ogg'
       },
       {
@@ -56,7 +62,8 @@ export default [
     title: 'Windows 95 - A First Look',
     duration: '25:25',
     meta: {
-      archiveDotOrgUrl: 'https://archive.org/details/Windows95AFirstLookDiamondEntertainmentCorporation1995',
+      archiveDotOrgUrl:
+        'https://archive.org/details/Windows95AFirstLookDiamondEntertainmentCorporation1995',
       year: 1995
     }
   }

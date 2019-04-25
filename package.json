@@ -11,7 +11,17 @@
     "example:build:deploy": "parcel build example/src/index.html --out-dir example/dist --public-url /win95-media-player/ && parcel build example/quickstart/quickstart.html --out-dir example/dist --public-url /win95-media-player/",
     "deploy": "npm run build && npm run example:build:deploy && gh-pages -d example/dist",
     "prepare": "npm run build",
+    "prepublishOnly": "npm run lint:all",
+    "prettier": "pretty-quick --staged --no-restage \"**/*.js\" \"**/*.scss\"",
+    "prettier:all": "prettier --write \"**/*.js\" \"**/*.scss\"",
+    "lint": "lint-staged",
+    "lint:all": "eslint \"**/*.js\" && node prettier-check.js \"**/*.scss\"",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   },
   "repository": {
     "type": "git",
@@ -55,11 +65,19 @@
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
     "base64-img": "^1.0.4",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
     "gh-pages": "^2.0.1",
+    "lint-staged": "^8.1.5",
     "mkdirp": "^0.5.1",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-static-files-copy": "^2.0.0",
+    "prettier": "^1.17.0",
+    "pretty-quick": "^1.10.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "rimraf": "^2.6.3"

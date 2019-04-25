@@ -53,9 +53,7 @@ const exampleCode = document.getElementById('example-code').textContent;
 
 ReactDOM.render(
   <pre>
-    <code>
-      {exampleCode}
-    </code>
+    <code>{exampleCode}</code>
   </pre>,
   document.getElementById('example-code-display')
 );
