@@ -30,6 +30,34 @@ export default [
     sources: [
       {
         src:
+          'https://archive.org/download/Weezer_Buddy_Holly/Weezer_Buddy_Holly.ogv',
+        type: 'video/ogg'
+      },
+      {
+        src:
+          'https://archive.org/download/Weezer_Buddy_Holly/Weezer_Buddy_Holly.mp4',
+        type: 'video/mp4'
+      }
+    ],
+    title: 'Buddy Holly',
+    artist: 'Weezer',
+    artwork: [
+      {
+        src:
+          'https://i.pinimg.com/originals/0d/52/83/0d5283c3ac6d239a753046106035aff3.jpg'
+      }
+    ],
+    duration: '2:59',
+    meta: {
+      archiveDotOrgUrl:
+        'https://archive.org/details/Weezer_Buddy_Holly',
+      year: 1994
+    }
+  },
+  {
+    sources: [
+      {
+        src:
           'https://archive.org/download/CC1301_windows_95/CC1301_windows_95.ogv',
         type: 'video/ogg'
       },
