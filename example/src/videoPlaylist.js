@@ -49,8 +49,7 @@ export default [
     ],
     duration: '2:59',
     meta: {
-      archiveDotOrgUrl:
-        'https://archive.org/details/Weezer_Buddy_Holly',
+      archiveDotOrgUrl: 'https://archive.org/details/Weezer_Buddy_Holly',
       year: 1994
     }
   },
