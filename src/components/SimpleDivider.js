@@ -1,5 +1,5 @@
-const React = require('react');
-const { themes } = require('react95');
+import React from 'react';
+import { themes } from 'react95';
 
 const style = {
   height: 0,

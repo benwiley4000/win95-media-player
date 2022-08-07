@@ -1,8 +1,7 @@
-const React = require('react');
-const PropTypes = require('prop-types');
-const { FullscreenContextProvider } = require('@cassette/core');
-
-const MediaPlayerView = require('./components/MediaPlayerView');
+import React from "react";
+import PropTypes from 'prop-types';
+import { FullscreenContextProvider } from '@cassette/core';
+import MediaPlayerView from './components/MediaPlayerView';
 
 class MediaPlayerUI extends React.PureComponent {
   render() {
@@ -46,4 +45,4 @@ MediaPlayerUI.defaultProps = {
   fullscreenEnabled: false
 };
 
-module.exports = MediaPlayerUI;
+export default MediaPlayerUI;

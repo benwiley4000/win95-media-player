@@ -1,25 +1,44 @@
-const React = require('react');
-const PropTypes = require('prop-types');
+import React from "react";
+import PropTypes from 'prop-types';
+
+import audio from '../icons/audio.png';
+import backscroll from '../icons/backscroll.png';
+import backseek from '../icons/backseek.png';
+import backskip from '../icons/backskip.png';
+import eject from '../icons/eject.png';
+import forwardscroll from '../icons/forwardscroll.png';
+import forwardseek from '../icons/forwardseek.png';
+import forwardskip from '../icons/forwardskip.png';
+import pause from '../icons/pause.png';
+import play from '../icons/play.png';
+import selectionend from '../icons/selectionend.png';
+import selectionstart from '../icons/selectionstart.png';
+import stop from '../icons/stop.png';
+import video from '../icons/video.png';
+import maximize from '../icons/maximize.png';
+import minimize from '../icons/minimize.png';
+import unmaximize from '../icons/unmaximize.png';
+import x from '../icons/x.png';
 
 const imgs = {
-  audio: require('../icons/audio.png'),
-  backscroll: require('../icons/backscroll.png'),
-  backseek: require('../icons/backseek.png'),
-  backskip: require('../icons/backskip.png'),
-  eject: require('../icons/eject.png'),
-  forwardscroll: require('../icons/forwardscroll.png'),
-  forwardseek: require('../icons/forwardseek.png'),
-  forwardskip: require('../icons/forwardskip.png'),
-  pause: require('../icons/pause.png'),
-  play: require('../icons/play.png'),
-  selectionend: require('../icons/selectionend.png'),
-  selectionstart: require('../icons/selectionstart.png'),
-  stop: require('../icons/stop.png'),
-  video: require('../icons/video.png'),
-  maximize: require('../icons/maximize.png'),
-  minimize: require('../icons/minimize.png'),
-  unmaximize: require('../icons/unmaximize.png'),
-  x: require('../icons/x.png')
+  audio,
+  backscroll,
+  backseek,
+  backskip,
+  eject,
+  forwardscroll,
+  forwardseek,
+  forwardskip,
+  pause,
+  play,
+  selectionend,
+  selectionstart,
+  stop,
+  video,
+  maximize,
+  minimize,
+  unmaximize,
+  x,
 };
 
 class Icon extends React.PureComponent {
@@ -33,4 +52,4 @@ Icon.propTypes = {
   name: PropTypes.string.isRequired
 };
 
-module.exports = Icon;
+export default Icon;

@@ -1,8 +1,7 @@
-const React = require('react');
-const PropTypes = require('prop-types');
-const { Button } = require('react95');
-
-const Icon = require('./Icon');
+import React from "react";
+import PropTypes from 'prop-types';
+import { Button } from 'react95';
+import Icon from './Icon';
 
 const normalIconStyle = { opacity: 1 };
 const disabledIconStyle = { opacity: 0.3 };
@@ -33,4 +32,4 @@ MediaBtn.defaultProps = {
   disabled: false
 };
 
-module.exports = MediaBtn;
+export default MediaBtn;

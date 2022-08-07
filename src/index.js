@@ -1,7 +1,2 @@
-const MediaPlayer = require('./MediaPlayer');
-const MediaPlayerUI = require('./MediaPlayerUI');
-
-module.exports = {
-  MediaPlayer,
-  MediaPlayerUI
-};
+export * as MediaPlayer from "./MediaPlayer";
+export * as MediaPlayer from "./MediaPlayer";

@@ -1,9 +1,8 @@
-const React = require('react');
-const { MediaProgressBar } = require('@cassette/components');
-const { themes } = require('react95');
-const ResizeObserver = require('resize-observer-polyfill').default;
-
-const ProgressRuler = require('./ProgressRuler');
+import React from 'react'
+import { MediaProgressBar } from '@cassette/components'
+import { themes } from 'react95'
+import ResizeObserver from 'resize-observer-polyfill'
+import ProgressRuler from './ProgressRuler'
 
 const progressMargin = 10;
 
@@ -103,4 +102,4 @@ class ProgressBar extends React.PureComponent {
   }
 }
 
-module.exports = ProgressBar;
+export default ProgressBar;
