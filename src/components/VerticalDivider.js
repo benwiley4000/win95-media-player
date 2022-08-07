@@ -1,5 +1,5 @@
-const React = require('react');
-const { themes } = require('react95');
+import React from 'react';
+import { themes } from 'react95';
 
 const style = {
   width: 0,
@@ -15,4 +15,4 @@ const VerticalDivider = () => {
   return <div style={style} />;
 };
 
-module.exports = VerticalDivider;
+export default VerticalDivider;

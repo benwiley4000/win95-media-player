@@ -1,8 +1,7 @@
-const React = require('react');
-const PropTypes = require('prop-types');
-const { playerContextFilter } = require('@cassette/core');
-
-const MediaBtn = require('./MediaBtn');
+import React from "react";
+import PropTypes from 'prop-types';
+import { playerContextFilter } from '@cassette/core';
+import MediaBtn from './MediaBtn';
 
 const icons = {
   fastforward: 'forwardseek',
@@ -72,7 +71,7 @@ SeekButton.propTypes = {
   type: PropTypes.oneOf(['fastforward', 'rewind']).isRequired
 };
 
-module.exports = playerContextFilter(SeekButton, [
+export default playerContextFilter(SeekButton, [
   'currentTime',
   'onSeekComplete'
 ]);

@@ -1,8 +1,8 @@
-const React = require('react');
-const PropTypes = require('prop-types');
-const { playerContextFilter, PlayerPropTypes } = require('@cassette/core');
-const { VideoDisplay } = require('@cassette/components');
-const {
+import React from "react";
+import PropTypes from 'prop-types';
+import { playerContextFilter, PlayerPropTypes } from '@cassette/core'
+import { VideoDisplay } from '@cassette/components'
+import {
   themes,
   Window,
   WindowHeader,
@@ -11,17 +11,16 @@ const {
   Button,
   Cutout,
   Divider
-} = require('react95');
-const { ThemeProvider } = require('styled-components');
-const ResizeObserver = require('resize-observer-polyfill').default;
-
-const ProgressBar = require('./ProgressBar');
-const MediaBtn = require('./MediaBtn');
-const SeekButton = require('./SeekButton');
-const Icon = require('./Icon');
-const SimpleDivider = require('./SimpleDivider');
-const VerticalDivider = require('./VerticalDivider');
-const convertToTime = require('../utils/convertToTime');
+} from 'react95'
+import { ThemeProvider } from 'styled-components'
+import ResizeObserver from 'resize-observer-polyfill'
+import ProgressBar from './ProgressBar'
+import MediaBtn from './MediaBtn'
+import SeekButton from './SeekButton'
+import Icon from './Icon'
+import SimpleDivider from './SimpleDivider'
+import VerticalDivider from './VerticalDivider'
+import convertToTime from '../utils/convertToTime'
 
 const windowHeaderStyle = {
   padding: 0,
@@ -285,7 +284,7 @@ MediaPlayerView.propTypes = {
   onForwardSkip: PropTypes.func.isRequired
 };
 
-module.exports = playerContextFilter(MediaPlayerView, [
+export default playerContextFilter(MediaPlayerView, [
   'fullscreen',
   'requestFullscreen',
   'requestExitFullscreen',

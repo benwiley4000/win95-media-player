@@ -1,7 +1,7 @@
-const React = require('react');
-const { PlayerContextProvider } = require('@cassette/core');
+import React from "react";
+import { PlayerContextProvider } from "@cassette/core"
+import MediaPlayerUI from "./MediaPlayerUI";
 
-const MediaPlayerUI = require('./MediaPlayerUI');
 
 class MediaPlayer extends React.Component {
   render() {
@@ -37,4 +37,4 @@ MediaPlayer.defaultProps = {
   ...PlayerContextProvider.defaultProps
 };
 
-module.exports = MediaPlayer;
+export default MediaPlayer;

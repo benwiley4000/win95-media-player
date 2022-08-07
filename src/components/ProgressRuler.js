@@ -1,6 +1,6 @@
-const React = require('react');
-const PropTypes = require('prop-types');
-const { playerContextFilter } = require('@cassette/core');
+import React from "react";
+import PropTypes from 'prop-types';
+import { playerContextFilter } from '@cassette/core';
 
 // the minimum horizontal pixel space needed to print a time label
 const minWidthForTickInterval = 30;
@@ -102,4 +102,4 @@ ProgressRuler.propTypes = {
   progressWidth: PropTypes.number.isRequired
 };
 
-module.exports = playerContextFilter(ProgressRuler, ['duration']);
+export default playerContextFilter(ProgressRuler, ['duration']);
